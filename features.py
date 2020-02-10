@@ -49,3 +49,6 @@ class FEATURE:
         data = np.append(data,[k], axis = 1)
         data = np.append(data,[v], axis = 0)
         return data
+
+fet = FEATURE("co2a0000364.csv")
+ot1 = fet.generate_feature()
