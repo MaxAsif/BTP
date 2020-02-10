@@ -16,9 +16,10 @@ class FORMAT:
         
     def format(self):        
         # READING CSV FILES
-        df = pd.read_csv(self.filename)
+        print(self.filename)
+        df = pd.read_csv("csv/"+self.filename)
         
-        # REMOVING UNNECESSARY COLUMNS
+        """# REMOVING UNNECESSARY COLUMNS
         df = df[df.columns[1:4]]
         
         # REMOVE HEADERFILES
@@ -28,13 +29,13 @@ class FORMAT:
         
         # RENAME COLUMNS
         df = df.rename(columns={"co2a0000364.rd":"chan", "Unnamed: 2":"Time", "Unnamed: 3":"Voltage"})
-        
+        """
         # REEMOVE ROWS IN BETWEEN
         df = df[df.Time != 'chan']
         
         # RESET INDEX 
         df = df.reset_index()
-        df = df[df.columns[1:4]]
+        df = df[df.columns[1:5]]
         
         df.count()
         # ALL CHANNELS NAME LIST
